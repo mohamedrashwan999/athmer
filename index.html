@@ -1,0 +1,31 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Athmer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#f6f0e4;color:#222;scroll-behavior:smooth}
+nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;padding:15px 40px;background:#222;color:#fff;z-index:9}
+nav a{color:#fff;text-decoration:none;margin:0 10px}
+header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),#6d5b3d;color:#fff;padding:20px}
+h1{font-size:60px;color:#e8c07a}.btn{background:#e8c07a;color:#222;padding:15px 30px;border-radius:8px;text-decoration:none;font-weight:bold}
+section{padding:80px 10%;opacity:0;transform:translateY(30px);transition:.7s}
+.show{opacity:1;transform:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.12);transition:.3s}
+.card:hover{transform:translateY(-8px)}
+.price{text-align:center;background:#222;color:#fff}.price span{font-size:45px;color:#e8c07a}
+footer{text-align:center;padding:20px;background:#222;color:#fff}
+#top{position:fixed;bottom:20px;left:20px;display:none;padding:12px;border:none;border-radius:50%;background:#e8c07a}
+</style></head><body>
+<nav><b>Athmer</b><div><a href="#f">المميزات</a><a href="#p">الاشتراك</a></div></nav>
+<header><h1>Athmer</h1><p>استشارات زراعية غير محدودة لمساعدتك في اختيار أفضل المحاصيل وإدارة الأرض بكفاءة.</p><br><a class='btn' href='#p'>اشترك الآن</a></header>
+<section id='f'><h2>لماذا Athmer؟</h2><br><div class='grid'>
+<div class='card'>🌱 استشارات غير محدودة</div><div class='card'>🌾 أفضل المحاصيل المناسبة</div><div class='card'>💧 التربة والري والتسميد</div><div class='card'>📈 دعم المستثمر والمزارع</div></div></section>
+<section id='p' class='price'><h2>اشتراك شهري</h2><br><span>100 جنيه</span><br><br><a href='#' class='btn' id='sub'>ابدأ الآن</a><p id='m'></p></section>
+<footer>©2026 Athmer</footer><button id='top'>↑</button>
+<script>
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}));
+document.querySelectorAll('section').forEach(s=>obs.observe(s));
+sub.onclick=e=>{e.preventDefault();m.textContent='تم استلام طلبك، سيتم التواصل معك قريبًا.'}
+onscroll=()=>{top.style.display=scrollY>300?'block':'none'}
+top.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+</script></body></html>
